@@ -90,4 +90,8 @@ public abstract class ActionBarActivity extends Activity {
         mActionBarHelper.onTitleChanged(title, color);
         super.onTitleChanged(title, color);
     }
+
+    public int getHomeIconRes() {
+        return R.drawable.ic_home;
+    }
 }

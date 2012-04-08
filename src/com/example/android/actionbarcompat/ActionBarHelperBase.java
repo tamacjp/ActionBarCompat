@@ -36,7 +36,6 @@ import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /**
@@ -49,7 +48,7 @@ public class ActionBarHelperBase extends ActionBarHelper {
 
     protected Set<Integer> mActionItemIds = new HashSet<Integer>();
 
-    protected ActionBarHelperBase(Activity activity) {
+    protected ActionBarHelperBase(ActionBarActivity activity) {
         super(activity);
     }
 
@@ -90,7 +89,7 @@ public class ActionBarHelperBase extends ActionBarHelper {
         SimpleMenuItem homeItem = new SimpleMenuItem(tempMenu,
                 android.R.id.home, 0,
                 mActivity.getString(R.string.actionbar_title));
-        homeItem.setIcon(R.drawable.ic_home);
+        homeItem.setIcon(mActivity.getHomeIconRes());
         addActionItemCompatFromMenuItem(homeItem);
 
         // Add title text

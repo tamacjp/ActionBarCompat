@@ -36,7 +36,7 @@ import android.view.Window;
  * , which uses the built-in ActionBar features in Android 3.0 and later.
  */
 public abstract class ActionBarHelper {
-    protected Activity mActivity;
+    protected ActionBarActivity mActivity;
     protected boolean mNoTitle = false;
 
     /**
@@ -44,7 +44,7 @@ public abstract class ActionBarHelper {
      * activity. Depending on which device the app is running, either a basic
      * helper or Honeycomb-specific helper will be returned.
      */
-    public static ActionBarHelper createInstance(Activity activity) {
+    public static ActionBarHelper createInstance(ActionBarActivity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
             return new ActionBarHelperICS(activity);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -54,7 +54,7 @@ public abstract class ActionBarHelper {
         }
     }
 
-    protected ActionBarHelper(Activity activity) {
+    protected ActionBarHelper(ActionBarActivity activity) {
         mActivity = activity;
     }
 

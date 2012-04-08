@@ -17,7 +17,6 @@
 
 package com.example.android.actionbarcompat;
 
-import android.app.Activity;
 import android.content.Context;
 
 /**
@@ -26,7 +25,7 @@ import android.content.Context;
  * devices. It thus requires API level 14.
  */
 public class ActionBarHelperICS extends ActionBarHelperHoneycomb {
-    protected ActionBarHelperICS(Activity activity) {
+    protected ActionBarHelperICS(ActionBarActivity activity) {
         super(activity);
     }
 
