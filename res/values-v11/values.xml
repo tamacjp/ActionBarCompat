@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.ActionBarCompat" parent="android:style/Theme.Holo">
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="android:windowContentOverlay">@drawable/actionbar_shadow</item>
+    </style>
+
+    <style name="Theme.ActionBarCompat.Light" parent="android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/ActionBar.Light</item>
+        <item name="android:windowContentOverlay">@drawable/actionbar_shadow</item>
+    </style>
+
+    <style name="ActionBar" parent="android:style/Widget.Holo.ActionBar">
+        <item name="android:titleTextStyle">@style/ActionBarTitle</item>
+        <!-- item name="android:icon">@drawable/ic_home</item -->
+    </style>
+
+    <style name="ActionBar.Light" parent="android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#eee</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitle</item>
+        <!-- item name="android:icon">@drawable/ic_home</item -->
+    </style>
+
+    <style name="ActionBarTitle">
+        <!-- item name="android:textColor">@color/actionbar_title_color</item -->
+    </style>
+
+</resources>
