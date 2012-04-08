@@ -104,12 +104,6 @@ public abstract class ActionBarHelper {
     }
 
     /**
-     * Sets the indeterminate loading state of the item with ID
-     * {@link R.id.menu_refresh}. (where the item ID was menu_refresh).
-     */
-    public abstract void setRefreshActionItemState(boolean refreshing);
-
-    /**
      * Returns a {@link MenuInflater} for use when inflating menus. The
      * implementation of this method in {@link ActionBarHelperBase} returns a
      * wrapped menu inflater that can read action bar metadata from a menu

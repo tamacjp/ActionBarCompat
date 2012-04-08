@@ -131,23 +131,6 @@ public class ActionBarHelperBase extends ActionBarHelper {
         }
     }
 
-    /** {@inheritDoc} */
-    @Override
-    public void setRefreshActionItemState(boolean refreshing) {
-        View refreshButton = mActivity
-                .findViewById(R.id.actionbar_compat_item_refresh);
-        View refreshIndicator = mActivity
-                .findViewById(R.id.actionbar_compat_item_refresh_progress);
-
-        if (refreshButton != null) {
-            refreshButton.setVisibility(refreshing ? View.GONE : View.VISIBLE);
-        }
-        if (refreshIndicator != null) {
-            refreshIndicator.setVisibility(refreshing ? View.VISIBLE
-                    : View.GONE);
-        }
-    }
-
     /**
      * Action bar helper code to be run in
      * {@link Activity#onCreateOptionsMenu(android.view.Menu)}.
@@ -205,7 +188,6 @@ public class ActionBarHelperBase extends ActionBarHelper {
      * information from a {@link android.view.MenuItem}. If the menu item ID is
      * <code>menu_refresh</code>, the menu item's state can be changed to show a
      * loading spinner using
-     * {@link com.example.android.actionbarcompat.ActionBarHelperBase#setRefreshActionItemState(boolean)}
      * .
      */
     private View addActionItemCompatFromMenuItem(final MenuItem item) {
