@@ -7,10 +7,6 @@
         <attr name="actionbarCompatItemHomeStyle" format="reference" />
         <attr name="actionbarCompatProgressIndicatorStyle" format="reference" />
     </declare-styleable>
-    <declare-styleable name="BezelImageView">
-        <attr name="maskDrawable" format="reference" />
-        <attr name="borderDrawable" format="reference" />
-    </declare-styleable>
 
     <dimen name="actionbar_compat_height">36dp</dimen>
     <dimen name="actionbar_compat_button_width">32dp</dimen>
@@ -19,9 +15,6 @@
 
     <item name="actionbar_compat" type="id"/>
     <item name="actionbar_compat_title" type="id"/>
-    <item name="actionbar_compat_item_refresh_progress" type="id"/>
-    <item name="actionbar_compat_item_refresh" type="id"/>
-    <item name="menu_refresh" type="id"/>
 
     <style name="Theme.ActionBarCompat" parent="android:style/Theme">
         <item name="android:windowTitleSize">@dimen/actionbar_compat_height</item>
