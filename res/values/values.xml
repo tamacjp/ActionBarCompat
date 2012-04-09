@@ -10,6 +10,7 @@
 
     <dimen name="actionbar_compat_height">36dp</dimen>
     <dimen name="actionbar_compat_button_width">32dp</dimen>
+    <dimen name="actionbar_compat_button_margin">8dp</dimen>
     <dimen name="actionbar_compat_button_home_width">32dp</dimen>
     <dimen name="actionbar_padding">4dp</dimen>
 

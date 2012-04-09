@@ -196,20 +196,26 @@ public class ActionBarHelperBase extends ActionBarHelper {
             return null;
         }
 
+        int style;
+        LinearLayout.LayoutParams params;
+        if (itemId == android.R.id.home) {
+            style = R.attr.actionbarCompatItemHomeStyle;
+            params = new LinearLayout.LayoutParams(
+                    getDimension(R.dimen.actionbar_compat_button_home_width),
+                    ViewGroup.LayoutParams.MATCH_PARENT);
+        } else {
+            style = R.attr.actionbarCompatItemStyle;
+            params = new LinearLayout.LayoutParams(
+                    getDimension(R.dimen.actionbar_compat_button_width),
+                    ViewGroup.LayoutParams.MATCH_PARENT);
+            params.setMargins(
+                    getDimension(R.dimen.actionbar_compat_button_margin), 0,
+                    getDimension(R.dimen.actionbar_compat_button_margin), 0);
+        }
+
         // Create the button
-        ImageButton actionButton = new ImageButton(
-                mActivity,
-                null,
-                itemId == android.R.id.home ? R.attr.actionbarCompatItemHomeStyle
-                        : R.attr.actionbarCompatItemStyle);
-        actionButton
-                .setLayoutParams(new ViewGroup.LayoutParams(
-                        (int)mActivity
-                                .getResources()
-                                .getDimension(
-                                        itemId == android.R.id.home ? R.dimen.actionbar_compat_button_home_width
-                                                : R.dimen.actionbar_compat_button_width),
-                        ViewGroup.LayoutParams.MATCH_PARENT));
+        ImageButton actionButton = new ImageButton(mActivity, null, style);
+        actionButton.setLayoutParams(params);
         actionButton.setImageDrawable(item.getIcon());
         actionButton.setScaleType(ImageView.ScaleType.FIT_CENTER);
         actionButton.setContentDescription(item.getTitle());
@@ -223,6 +229,10 @@ public class ActionBarHelperBase extends ActionBarHelper {
         actionBar.addView(actionButton);
 
         return actionButton;
+    }
+
+    private int getDimension(int resid) {
+        return (int)mActivity.getResources().getDimension(resid);
     }
 
     /**
