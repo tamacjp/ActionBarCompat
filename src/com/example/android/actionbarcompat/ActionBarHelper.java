@@ -18,6 +18,7 @@
 package com.example.android.actionbarcompat;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -61,6 +62,10 @@ public abstract class ActionBarHelper {
     public void setNoTitle() {
         mNoTitle = true;
     }
+
+    abstract public void setHomeIcon(int resId);
+
+    abstract public void setHomeIcon(Drawable logo);
 
     public abstract void invalidateMenu();
 

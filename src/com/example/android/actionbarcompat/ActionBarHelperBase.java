@@ -25,6 +25,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.XmlResourceParser;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.InflateException;
 import android.view.Menu;
@@ -130,6 +131,29 @@ public class ActionBarHelperBase extends ActionBarHelper {
         }
     }
 
+    public void setHomeIcon(int resId) {
+        ImageButton home = getHomeIcon();
+        if (home != null) {
+            home.setImageResource(resId);
+        }
+    }
+
+    public void setHomeIcon(Drawable logo) {
+        ImageButton home = getHomeIcon();
+        if (home != null) {
+            home.setImageDrawable(logo);
+        }
+    }
+
+    private ImageButton getHomeIcon() {
+        ViewGroup actionBar = getActionBarCompat();
+        if (actionBar != null) {
+            return (ImageButton)actionBar.findViewById(android.R.id.home);
+        } else {
+            return null;
+        }
+    }
+
     /**
      * Action bar helper code to be run in
      * {@link Activity#onCreateOptionsMenu(android.view.Menu)}.
@@ -216,6 +240,7 @@ public class ActionBarHelperBase extends ActionBarHelper {
         // Create the button
         ImageButton actionButton = new ImageButton(mActivity, null, style);
         actionButton.setLayoutParams(params);
+        actionButton.setId(itemId);
         actionButton.setImageDrawable(item.getIcon());
         actionButton.setScaleType(ImageView.ScaleType.FIT_CENTER);
         actionButton.setContentDescription(item.getTitle());

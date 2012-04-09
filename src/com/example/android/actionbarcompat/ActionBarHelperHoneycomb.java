@@ -18,6 +18,7 @@
 package com.example.android.actionbarcompat;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 
 /**
  * An extension of {@link ActionBarHelper} that provides Android 3.0-specific
@@ -40,5 +41,13 @@ public class ActionBarHelperHoneycomb extends ActionBarHelper {
      */
     protected Context getActionBarThemedContext() {
         return mActivity;
+    }
+
+    public void setHomeIcon(int resId) {
+        mActivity.getActionBar().setLogo(resId);
+    }
+
+    public void setHomeIcon(Drawable logo) {
+        mActivity.getActionBar().setLogo(logo);
     }
 }
